@@ -1,9 +1,7 @@
 import sqlite3
 import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
 
-import sqlite3
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 
 
 class DBHelper:
@@ -276,15 +274,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.pushButton = QtWidgets.QPushButton(self.tab)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout.addWidget(self.pushButton)
-        self.pushButton_2 = QtWidgets.QPushButton(self.tab)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout.addWidget(self.pushButton_2)
-        self.pushButton_3 = QtWidgets.QPushButton(self.tab)
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.horizontalLayout.addWidget(self.pushButton_3)
+        # self.pushButton = QtWidgets.QPushButton(self.tab)
+        # self.pushButton.setObjectName("pushButton")
+        # self.horizontalLayout.addWidget(self.pushButton)
+        # self.pushButton_2 = QtWidgets.QPushButton(self.tab)
+        # self.pushButton_2.setObjectName("pushButton_2")
+        # self.horizontalLayout.addWidget(self.pushButton_2)
+        # self.pushButton_3 = QtWidgets.QPushButton(self.tab)
+        # self.pushButton_3.setObjectName("pushButton_3")
+        # self.horizontalLayout.addWidget(self.pushButton_3)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.verticalLayout_2.addLayout(self.horizontalLayout)
@@ -301,23 +299,23 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButton_4 = QtWidgets.QPushButton(self.tab_2)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_2.addWidget(self.pushButton_4)
-        self.pushButton_5 = QtWidgets.QPushButton(self.tab_2)
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.horizontalLayout_2.addWidget(self.pushButton_5)
-        self.pushButton_6 = QtWidgets.QPushButton(self.tab_2)
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.horizontalLayout_2.addWidget(self.pushButton_6)
+        # self.pushButton_4.setObjectName("pushButton_4")
+        # self.horizontalLayout_2.addWidget(self.pushButton_4)
+        # self.pushButton_5 = QtWidgets.QPushButton(self.tab_2)
+        # self.pushButton_5.setObjectName("pushButton_5")
+        # self.horizontalLayout_2.addWidget(self.pushButton_5)
+        # self.pushButton_6 = QtWidgets.QPushButton(self.tab_2)
+        # self.pushButton_6.setObjectName("pushButton_6")
+        # self.horizontalLayout_2.addWidget(self.pushButton_6)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
         self.verticalLayout_3.addLayout(self.horizontalLayout_2)
-        self.tableWidget_2 = QtWidgets.QTableWidget(self.tab_2)
-        self.tableWidget_2.setObjectName("tableWidget_2")
-        self.tableWidget_2.setColumnCount(0)
-        self.tableWidget_2.setRowCount(0)
-        self.verticalLayout_3.addWidget(self.tableWidget_2)
-        self.tabWidget.addTab(self.tab_2, "")
+        # self.tableWidget_2 = QtWidgets.QTableWidget(self.tab_2)
+        # self.tableWidget_2.setObjectName("tableWidget_2")
+        # self.tableWidget_2.setColumnCount(0)
+        # self.tableWidget_2.setRowCount(0)
+        # self.verticalLayout_3.addWidget(self.tableWidget_2)
+        # self.tabWidget.addTab(self.tab_2, "")
         self.verticalLayout.addWidget(self.tabWidget)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -335,14 +333,14 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "Добавить вид кофе"))
-        self.pushButton_2.setText(_translate("MainWindow", "Редактировать вид кофе"))
-        self.pushButton_3.setText(_translate("MainWindow", "Удалить вид кофе"))
+        # self.pushButton.setText(_translate("MainWindow", "Добавить вид кофе"))
+        # self.pushButton_2.setText(_translate("MainWindow", "Редактировать вид кофе"))
+        # self.pushButton_3.setText(_translate("MainWindow", "Удалить вид кофе"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Виды кофе"))
-        self.pushButton_4.setText(_translate("MainWindow", "Добавить обжарку"))
-        self.pushButton_5.setText(_translate("MainWindow", "Редактировать обжарку"))
-        self.pushButton_6.setText(_translate("MainWindow", "Удалить обжарку"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Обжарка"))
+        # self.pushButton_4.setText(_translate("MainWindow", "Добавить обжарку"))
+        # self.pushButton_5.setText(_translate("MainWindow", "Редактировать обжарку"))
+        # self.pushButton_6.setText(_translate("MainWindow", "Удалить обжарку"))
+        # self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Обжарка"))
 
 
 class Window(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -352,17 +350,17 @@ class Window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.helper = DBHelper()
         self.con = sqlite3.connect("films_db.sqlite")
         self.cur = self.con.cursor()
-        self.pushButton.clicked.connect(self.add_film_dialog)
-        self.pushButton_2.clicked.connect(self.edit_film_dialog)
-        self.pushButton_3.clicked.connect(self.delete_film)
-        self.pushButton_4.clicked.connect(self.add_genre_dialog)
-        self.pushButton_5.clicked.connect(self.edit_genre_dialog)
-        self.pushButton_6.clicked.connect(self.delete_genre)
+        # self.pushButton.clicked.connect(self.add_film_dialog)
+        # self.pushButton_2.clicked.connect(self.edit_film_dialog)
+        # self.pushButton_3.clicked.connect(self.delete_film)
+        # self.pushButton_4.clicked.connect(self.add_genre_dialog)
+        # self.pushButton_5.clicked.connect(self.edit_genre_dialog)
+        # self.pushButton_6.clicked.connect(self.delete_genre)
         self.update_all()
 
     def update_all(self):
         self.update_films_table()
-        self.update_genres_table()
+        # self.update_genres_table()
 
     def add_film_dialog(self):
         dialog = AddFilmDialog(self.helper)
@@ -414,16 +412,16 @@ class Window(QtWidgets.QMainWindow, Ui_MainWindow):
                     elem = self.helper.id_genre[elem]
                 self.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(elem)))
 
-    def update_genres_table(self):
-        genres = self.helper.get_genres()
-        # headers = list(map(lambda x: x[0], genres.description))
-        self.tableWidget_2.setColumnCount(2)
-        # self.tableWidget_2.setHorizontalHeaderLabels(headers)
-        self.tableWidget_2.setRowCount(0)
-        for i, row in enumerate(genres):
-            self.tableWidget_2.setRowCount(self.tableWidget_2.rowCount() + 1)
-            for j, elem in enumerate(row):
-                self.tableWidget_2.setItem(i, j, QtWidgets.QTableWidgetItem(str(elem)))
+    # def update_genres_table(self):
+    #     genres = self.helper.get_genres()
+    #     # headers = list(map(lambda x: x[0], genres.description))
+    #     # self.tableWidget_2.setColumnCount(2)
+    #     # self.tableWidget_2.setHorizontalHeaderLabels(headers)
+    #     self.tableWidget_2.setRowCount(0)
+    #     for i, row in enumerate(genres):
+    #         self.tableWidget_2.setRowCount(self.tableWidget_2.rowCount() + 1)
+    #         for j, elem in enumerate(row):
+    #             self.tableWidget_2.setItem(i, j, QtWidgets.QTableWidgetItem(str(elem)))
 
     def add_genre_dialog(self):
         dialog = AddGenreDialog(self.helper)
